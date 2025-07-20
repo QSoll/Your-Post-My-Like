@@ -1,0 +1,156 @@
+@page "/postagens"
+@model siteYourPostMyLike.Pages.PostagensModel
+
+<link rel="stylesheet" href="/css/postagens.css" />
+<link rel="stylesheet" href="/css/botoes.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+<main>
+    <!-- Formulário de busca -->
+    <form method="get" class="form-busca">
+        <input type="text" name="busca" value='@ViewContext.HttpContext.Request.Query["busca"]'
+            placeholder="Buscar postagens..." class="campo-busca" />
+        <button type="submit" class="botao-busca">🔍</button>
+    </form>
+
+    <h1 class="text-center botoes-discretos">NAVEGUE CURTA COMENTA</h1>
+
+    <div class="postagem-container">
+
+        @if (Model.Posts.Any())
+        {
+            foreach (var post in Model.Posts)
+            {
+                <div class="postagem-card" onmouseover="this.classList.add      ('ativo')" onclick="fixarCard(this)">
+                    <div class="resumo-card">
+                        <div class="cabecalho-card">
+                            <span class="data-postagem">@post.Data.ToString("dd/MM/yyyy")</span>
+                            @if (post.Categorias != null && post.Categorias.Any())
+                            {
+                                foreach (var cat in post.Categorias)
+                                {
+                                    <span class="categoria-postagem">@cat</span>
+                                }
+                            }
+                        </div>
+
+                        <h3 class="titulo-postagem">@post.Titulo</h3>
+
+                        @if (!string.IsNullOrWhiteSpace(post.Nome))
+                        {
+                            <p class="autor-topo"><strong>@post.Nome</strong></p>
+                        }
+                    </div>
+
+                    <div class="rede-links">
+                        @if (!string.IsNullOrEmpty(post.LinkLinkedin))
+                        {
+                            <a href="@post.LinkLinkedin" target="_blank">
+                                <img src="/images/logo_linkedin.jpg" alt="LinkedIn" />
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(post.LinkInstagram))
+                        {
+                            <a href="@post.LinkInstagram" target="_blank">
+                                <img src="/images/logo_instagram.png" alt="Instagram" />
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(post.LinkFacebook))
+                        {
+                            <a href="@post.LinkFacebook" target="_blank">
+                                <img src="/images/logo_facebook.png" alt="Facebook" />
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(post.LinkYouTube))
+                        {
+                            <a href="@post.LinkYouTube" target="_blank">
+                                <img src="/images/logo_youtube.png" alt="YouTube" />
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(post.LinkGitHub))
+                        {
+                            <a href="@post.LinkGitHub" target="_blank">
+                                <img src="/images/logo_github.png" alt="GitHub" />
+                            </a>
+                        }
+                        @if (!string.IsNullOrEmpty(post.LinkOutros))
+                        {
+                            <a href="@post.LinkOutros" target="_blank">
+                                <img src="/images/logo_outros.png" alt="Outros" />
+                            </a>
+                        }
+                    </div>
+                    <div class="detalhes-card">
+                        @if (!string.IsNullOrEmpty(post.Resumo))
+                        {
+                            <p>@post.Resumo</p>
+                        }
+                        <hr class="linha-divisoria" />
+                        <p class="email-card"><strong><!--email aparece aqui--> </strong> @post.Email</p>
+                        <hr class="linha-divisoria" />
+
+                        <div class="interacoes-compactas">
+                            <form method="post" asp-page-handler="Curtir" class="form-curtir">
+                                <input type="hidden" name="idPost" value="@post.Id" />
+                                <button type="submit" class="btn-curtir" onclick="this.classList.toggle('curtido')">🤍</button>
+                                <span class="contador-curtidas">@post.Curtidas</span>
+                            </form>
+
+                            <textarea rows="2" placeholder="Comentar..." class="campo-comentario"></textarea>
+
+                            <form method="post" asp-page-handler="Comentar">
+
+                                <input type="hidden" name="idPost" value="@post.Id" />
+                                <input type="text" name="nomeComentario" placeholder="Seu nome" required
+                                    class="campo-comentario-nome" />
+                                <textarea name="textoComentario" rows="2" placeholder="Comente aqui..." required
+                            class="campo-comentario-texto"></textarea>
+                                <button type="submit" class="botao-comentar">Enviar comentário</button>
+                            </form>
+                        </div>
+
+                        @if (post.Comentarios != null && post.Comentarios.Any())
+                        {
+                            <div class="bloco-comentarios">
+                                @foreach (var c in post.Comentarios.OrderByDescending(c => c.Data))
+                                {
+                                    <div class="comentario">
+                                        <p><strong>@c.Nome:</strong> @c.Texto</p>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(post.Mensagem))
+                        {
+                            <p class="mensagem-postagem">💬 @post.Mensagem</p>
+                        }
+
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Nenhuma mensagem enviada ainda. Seja o primeiro a postar!</p>
+        }
+    </div>
+</main>
+
+<script>
+    function fixarCard(card) {
+        card.classList.toggle('fixo');
+    }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const campos = document.querySelectorAll(".campo-comentario");
+
+        campos.forEach(textarea => {
+            textarea.addEventListener("input", () => {
+                textarea.style.height = "auto";
+                textarea.style.height = (textarea.scrollHeight) + "px";
+            });
+        });
+    });
+</script>

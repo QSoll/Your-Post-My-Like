@@ -1,0 +1,18 @@
+.logos-mini{
+    width:50px;
+    height: auto;
+    
+}
+
+.logos-media{
+    width:150px;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.banner-total{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}

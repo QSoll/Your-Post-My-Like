@@ -1,0 +1,77 @@
+@page
+@model siteYourPostMyLike.Pages.FormularioModel
+
+@{
+  // Obtém data e hora do Brasil (GMT-3)
+  var dataHoraBrasil = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,
+  TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time"));
+}
+
+<link rel="stylesheet" href="/css/formulario.css" />
+<link rel="stylesheet" href="/css/botoes.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+
+<main class="formulario-container">
+
+  <form method="post">
+    <p><strong>Data e Hora:</strong> @dataHoraBrasil.ToString("dd/MM/yyyy HH:mm")</p>
+    <input type="hidden" asp-for="Post.Data" value="@dataHoraBrasil" />
+
+    <h1>Nova Postagem</h1>
+
+
+    <fieldset>
+      <legend>Categorias</legend>
+      <div class="categorias-bloco">
+        @foreach (var categoria in Model.Categorias)
+        {
+          <label>
+            <input type="checkbox" name="CategoriasSelecionadas" value="@categoria" />
+            @categoria
+          </label>
+        }
+      </div>
+    </fieldset>
+
+    <label>Nome do Autor *</label>
+    <input asp-for="Post.Nome" class="campo-texto" required />
+
+    <label>Email *</label>
+    <input asp-for="Post.Email" type="email" class="campo-texto" required />
+
+    <label>WhatsApp</label>
+    <input asp-for="Post.WhatsApp" type="tel" class="campo-texto" />
+
+    <label>Título da Postagem *</label>
+    <input asp-for="Post.Titulo" class="campo-texto" required />
+
+    <label>Resumo</label>
+    <textarea asp-for="Post.Resumo" rows="4" class="campo-area"></textarea>
+
+
+    <h3>Links de Redes Sociais</h3>
+
+    <div class="grupo-redes">
+      <label>LinkedIn</label>
+      <input asp-for="Post.LinkLinkedin" class="campo-rede" />
+
+      <label>GitHub</label>
+      <input asp-for="Post.LinkGitHub" class="campo-rede" />
+
+      <label>Instagram</label>
+      <input asp-for="Post.LinkInstagram" class="campo-rede" />
+
+      <label>Facebook</label>
+      <input asp-for="Post.LinkFacebook" class="campo-rede" />
+
+      <label>YouTube</label>
+      <input asp-for="Post.LinkYouTube" class="campo-rede" />
+
+      <label>Outros Links</label>
+      <input asp-for="Post.LinkOutros" class="campo-rede" placeholder="Ex: https://meuportfolio.com" />
+    </div>
+
+    <button type="submit" class="botoes-verdes">Enviar</button>
+  </form>
+</main>

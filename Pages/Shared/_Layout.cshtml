@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - YourPost MyLike</title>
+
+    <!-- Estilos globais do site -->
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/botoes.css" />
+     <link rel="stylesheet" href="/css/imgs.css" />
+  </head>
+
+  <body>
+    <partial name="_Header" />
+
+    
+
+    <main role="main">
+      @RenderBody()
+    </main>
+
+    <partial name="_Footer" />
+
+    @* Scripts JS se precisar no futuro
+    <script src="/js/site.js"></script>
+    *@
+
+    <script src="/js/site.js"></script>
+
+  </body>
+
+</html>

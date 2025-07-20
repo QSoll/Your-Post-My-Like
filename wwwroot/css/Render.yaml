@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: yourpost-mylike
+    runtime: dotnet
+    buildCommand: dotnet build
+    startCommand: dotnet run
+    repo: https://github.com/seunome/seurepositorio
+    branch: main
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

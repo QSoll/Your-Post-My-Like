@@ -1,0 +1,36 @@
+.botoes-verdes{
+  background-color: #629338ff;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botoes-verdes:hover{
+  background-color: #4b7832;
+  transform: scale(1.05);
+  color:black;
+}
+
+.botoes-discretos{
+  transform: scale(1.05);
+   width: 100%;
+   padding:10px;
+
+}
+.botoes-discretos:hover{
+  color:black;
+  transform: scale(1.05);
+  border:1px solid transparent;
+  border-radius: 30px;
+  background-color: rgb(248, 247, 197);
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+}

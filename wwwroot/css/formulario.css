@@ -1,0 +1,108 @@
+.categorias-bloco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.categorias-bloco label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e6f4ea;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.categorias-bloco input[type="checkbox"] {
+  accent-color: #3dc47d;
+}
+
+/*inicio escolhas*/
+.campo-texto,
+.campo-rede {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+  text-align: left;
+box-sizing: border-box;
+}
+
+.campo-area {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.categorias-bloco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+
+}
+
+.categorias-bloco label {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f2f7f4;
+  border-radius: 16px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.grupo-redes {
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+/*final escolhas*/
+
+
+
+.formulario-container {
+  
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #2c4919;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #cbe8b2;
+}
+
+fieldset {
+  border: 1px solid #cbe8b2;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #629338ff;
+}
+
+button {
+  margin-top: 30px;
+}

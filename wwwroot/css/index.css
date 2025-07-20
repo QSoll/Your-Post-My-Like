@@ -1,0 +1,30 @@
+.index-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #dff7cdff;
+  color: #2c4919;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.index-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #629338ff;
+}
+
+.index-container p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.index-banner {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
