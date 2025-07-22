@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\siteYourPostMyLike.csproj": {}
+    "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\siteYourPostMyLike.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\siteYourPostMyLike.csproj": {
+    "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\siteYourPostMyLike.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\siteYourPostMyLike.csproj",
+        "projectUniqueName": "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\siteYourPostMyLike.csproj",
         "projectName": "siteYourPostMyLike",
-        "projectPath": "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\siteYourPostMyLike.csproj",
+        "projectPath": "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\siteYourPostMyLike.csproj",
         "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\obj\\",
+        "outputPath": "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config"

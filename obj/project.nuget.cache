@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/FSekTbyKkE=",
+  "dgSpecHash": "Io+ZFN6OdXg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sol2022\\_trabalhando\\siteYourPostMyLike\\siteYourPostMyLike.csproj",
+  "projectFilePath": "C:\\Users\\Sol2022\\_trabalhando\\Your-Post-My-Like\\siteYourPostMyLike.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windows\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Windows\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
